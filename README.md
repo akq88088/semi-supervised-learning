@@ -28,8 +28,26 @@ S. Gu and Y. Jin, "Multi-train: A semi-supervised heterogeneous ensemble classif
 
 Neurocomputing, vol. 249, pp. 202-211, 2017.
 ## two_phase_auto_fit.py
+improve the tri-training algorithm, using second model to learning confidences of base classifiers,
 
+and auto select classification threshold when predict unlabeled data.
 ## Run the demo
+use the defalut setting
+```
+python two_phase_auto_fit.py
+```
+use optional parameter
+```
+python two_phase_auto_fit.py --experiment_num 5
+```
+use nargs = "+" parameter
+```
+python two_phase_auto_fit.py --label_rates 0.1 0.2
+```
+use store_true parameter
+```
+python two_phase_auto_fit.py --use_auto_select_threshold
+```
 ## optional parameters
 <table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=642
  style='width:481.7pt;border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
@@ -241,7 +259,7 @@ Neurocomputing, vol. 249, pp. 202-211, 2017.
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
   mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
-  <p class=MsoNormal><span lang=EN-US>'NB'</span></p>
+  <p class=MsoNormal><span lang=EN-US>['NB']</span></p>
   </td>
   <td width=276 valign=top style='width:206.65pt;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
@@ -391,7 +409,7 @@ Neurocomputing, vol. 249, pp. 202-211, 2017.
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
   mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
-  <p class=MsoNormal><span lang=EN-US>'entropy_split'</span></p>
+  <p class=MsoNormal><span lang=EN-US>['entropy_split']</span></p>
   </td>
   <td width=276 valign=top style='width:206.65pt;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
